@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #061d46;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.school-header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  pointer-events: none;
+}
+
+.school-logo {
+  height: 120px; /* menor para celular */
+  width: auto;
+}
+
+.greeting {
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px #000;
+  margin: 0;
+}
+
+/* CENA */
+.scene {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* NÃO usar height fixa */
+  background: url("snow-bg.jpg") center/cover no-repeat;
+  overflow-x: hidden;
+  padding-bottom: 100px; /* garante espaço */
+}
+
+/* LUA */
+.moon {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #fff 60%, #ddd 80%, #bbb 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px #fff;
+}
+
+/* TRENÓ */
+.santa {
+  position: absolute;
+  top: 10px;
+  left: -300px;
+  width: 30vw; /* RESPONSIVO */
+  max-width: 300px;
+  height: auto;
+  animation: fly 18s linear infinite;
+}
+
+@keyframes fly {
+  from { transform: translateX(0); }
+  to { transform: translateX(150vw); }
+}
+
+/* IMAGEM GRANDE (Pai Natal + Árvore) */
+.santa-full {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 100px auto 0;
+}
+
+/* ÁRVORE */
+.tree {
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+  width: 150px;
+  height: 200px;
+  background: url("tree.png") no-repeat center/cover;
+}
+
+/* CASA */
+.house {
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+  width: 180px;
+  height: 160px;
+  background: url("house.png") no-repeat center/cover;
+}
+
+/* NEVE */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 12px;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
